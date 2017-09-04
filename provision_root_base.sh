@@ -31,4 +31,4 @@ chown me:me /home/me/.ssh
 cp /root/.ssh/authorized_keys /home/me/.ssh/authorized_keys
 chown me:me /home/me/.ssh/authorized_keys
 
-curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | su me -C bash
+curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | su me -c bash
