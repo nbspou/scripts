@@ -21,6 +21,7 @@ echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
 
 curl -sL https://deb.nodesource.com/setup_6.x | bash
 apt-get install nodejs build-essential git mercurial cmake -y
+apt-get install prometheus-node-exporter -y
 
 adduser --disabled-password --gecos "" me
 mkdir /home/me/.ssh
