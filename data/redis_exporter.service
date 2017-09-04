@@ -1,0 +1,9 @@
+[Unit]
+Description=Redis Exporter
+
+[Service]
+User=prometheus
+ExecStart=/usr/bin/prometheus-redis-exporter
+
+[Install]
+WantedBy=default.target
