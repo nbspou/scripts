@@ -20,7 +20,7 @@ curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root
 
 ```
 usermod -aG sudo me
-passwd me
+echo 'me ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/90-cloud-init-users
 ```
 
 ```
