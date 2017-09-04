@@ -19,6 +19,11 @@ curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root
 * Prometheus MongoDB Exporter: http://localhost:9001/metrics
 
 ```
+usermod -aG sudo me
+passwd me
+```
+
+```
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/maintenance_root_redis.sh | bash
 ```
 
