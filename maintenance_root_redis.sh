@@ -11,7 +11,8 @@ cd ..
 cp /root/redis_exporter/redis_exporter /usr/bin/prometheus-redis-exporter
 wget https://raw.githubusercontent.com/nbspou/scripts/master/data/redis_exporter.service
 mv redis_exporter.service /etc/systemd/system/redis_exporter.service
+systemctl daemon-reload
 systemctl restart redis_exporter
 
-redis-cli shutdown
+redis-cli shutdown save
 systemctl start redis
