@@ -15,4 +15,4 @@ systemctl daemon-reload
 systemctl restart redis_exporter
 
 redis-cli shutdown save
-systemctl start redis
+systemctl start redis-server
