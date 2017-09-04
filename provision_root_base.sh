@@ -19,11 +19,11 @@ echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 sysctl vm.vfs_cache_pressure=50
 echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
 
-curl -sL https://deb.nodesource.com/setup_6.x | bash
+curl -sSL https://deb.nodesource.com/setup_6.x | bash
 apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
 
-curl -sL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | bash
+curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | bash
 
 adduser --disabled-password --gecos "" me
 mkdir /home/me/.ssh
@@ -31,4 +31,4 @@ chown me:me /home/me/.ssh
 cp /root/.ssh/authorized_keys /home/me/.ssh/authorized_keys
 chown me:me /home/me/.ssh/authorized_keys
 
-curl -sL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | su me -C bash
+curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | su me -C bash
