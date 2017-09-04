@@ -9,6 +9,10 @@ curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_redis.sh | bash
 ```
 
+```
+curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_dogcat.sh | bash
+```
+
 * Redis Server: 127.0.0.1:6379
 * Prometheus Node Exporter: http://localhost:9100/metrics
 * Prometheus Redis Exporter: http://localhost:9121/metrics
