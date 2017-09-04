@@ -23,8 +23,7 @@ curl -sL https://deb.nodesource.com/setup_6.x | bash
 apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
 
-yes "y" | ssh-keygen -t rsa -N "" -C $HOSTNAME"-root" -f ~/.ssh/id_rsa
-cat /root/.ssh/id_rsa.pub
+curl -sL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | bash
 
 adduser --disabled-password --gecos "" me
 mkdir /home/me/.ssh
@@ -32,3 +31,4 @@ chown me:me /home/me/.ssh
 cp /root/.ssh/authorized_keys /home/me/.ssh/authorized_keys
 chown me:me /home/me/.ssh/authorized_keys
 
+curl -sL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | su me -C bash
