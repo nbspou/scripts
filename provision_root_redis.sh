@@ -23,6 +23,7 @@ bash /etc/init.d/disable-transparent-hugepages
 
 apt-get install redis-server -y
 systemctl enable redis-server
+systemctl start redis-server
 
 apt-get install golang-go -y
 git clone -q https://github.com/oliver006/redis_exporter.git redis_exporter
