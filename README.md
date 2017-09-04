@@ -24,6 +24,10 @@ echo 'me ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d
 ```
 
 ```
+cat ~/.ssh/id_rsa.pub
+```
+
+```
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/maintenance_root_redis.sh | bash
 ```
 
