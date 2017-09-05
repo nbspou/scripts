@@ -43,5 +43,6 @@ curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/maintenance_ro
 
 Fix broken npm
 ```
-curl http://npmjs.org/install.sh | sh
+apt install aptitude
+aptitude reinstall nodejs
 ```
