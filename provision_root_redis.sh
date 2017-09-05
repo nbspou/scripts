@@ -17,7 +17,7 @@ echo 'vm.overcommit_memory=1' | sudo tee -a /etc/sysctl.conf
 wget https://raw.githubusercontent.com/nbspou/scripts/master/data/disable-transparent-hugepage
 mv disable-transparent-hugepage /etc/init.d/disable-transparent-hugepages
 chmod 755 /etc/init.d/disable-transparent-hugepages
-bash /etc/init.d/disable-transparent-hugepages
+/etc/init.d/disable-transparent-hugepages start
 
 # See: https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server
 
