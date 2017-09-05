@@ -40,3 +40,8 @@ curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/maintenance_ro
 ```
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/maintenance_root_dogcat.sh | bash
 ```
+
+Fix broken npm
+```
+curl http://npmjs.org/install.sh | sh
+```
