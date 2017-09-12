@@ -17,7 +17,7 @@ echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
 curl -sSL https://deb.nodesource.com/setup_6.x | bash
 apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
-apt-get install nano screen -y
+apt-get install nano screen command-not-found -y
 
 # Get rid of any bashrc customizations
 
