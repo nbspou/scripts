@@ -18,6 +18,7 @@ curl -sSL https://deb.nodesource.com/setup_6.x | bash
 apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
 apt-get install nano screen command-not-found psmisc -y
+apt-get remove vim -y
 
 # Get rid of any bashrc customizations
 
