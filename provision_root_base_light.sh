@@ -21,7 +21,7 @@ apt-get install prometheus-node-exporter -y
 # Get rid of any bashrc customizations
 
 /bin/cp /etc/skel/.bashrc ~/
-source ~/.bashr
+source ~/.bashrc
 
 # Set up some useful things for the root user
 
