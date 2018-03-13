@@ -24,6 +24,10 @@ echo 'me ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d
 ```
 
 ```
+curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_adduser.sh kaetemi | bash
+```
+
+```
 git config --global user.name "Jan Boon"
 git config --global user.email "kaetemi@no-break.space"
 git config --global push.default simple
