@@ -1,6 +1,9 @@
 #!/bin/sh
 set -x
 
+rm /var/lib/apt/lists/*
+rm /var/lib/apt/lists/partial/*
+
 apt-get update
 apt-get dist-upgrade -y
 
