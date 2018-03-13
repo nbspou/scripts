@@ -24,7 +24,7 @@ echo 'me ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d
 ```
 
 ```
-curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_adduser.sh kaetemi | bash
+curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_adduser.sh | bash -s me
 ```
 
 ```
