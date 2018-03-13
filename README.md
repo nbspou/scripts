@@ -19,12 +19,17 @@ curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root
 * Prometheus MongoDB Exporter: http://localhost:9001/metrics
 
 ```
-usermod -aG sudo me
-echo 'me ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/90-cloud-init-users
+curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_adduser.sh | bash -s me
 ```
 
 ```
-curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_adduser.sh | bash -s me
+usermod -aG sudo me
+passwd me
+```
+
+```
+usermod -aG sudo me
+echo 'me ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/90-cloud-init-users
 ```
 
 ```
