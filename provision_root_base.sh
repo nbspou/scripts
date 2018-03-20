@@ -7,6 +7,8 @@ rm /var/lib/apt/lists/partial/*
 apt-get update
 apt-get dist-upgrade -y
 
+timedatectl set-timezone UTC
+
 # See: https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04
 
 fallocate -l 8G /swapfile
