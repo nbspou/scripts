@@ -22,17 +22,21 @@ curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_adduser.sh | bash -s me
 ```
 
+To add `sudo` access through password:
+
 ```
 usermod -aG sudo me
 passwd me
 ```
+
+To add `sudo` access without password (on DigitalOcean):
 
 ```
 usermod -aG sudo me
 echo 'me ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/90-cloud-init-users
 ```
 
-Ensure that `/etc/ssh/sshd_config` has `PasswordAuthentication no`
+Ensure that `/etc/ssh/sshd_config` has `PasswordAuthentication no`!
 
 ```
 git config --global user.name "Jan Boon"
