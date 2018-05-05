@@ -45,6 +45,12 @@ git config --global push.default simple
 ```
 
 ```
+git config --global user.name "NO-BREAK SPACE OÜ"
+git config --global user.email "support@no-break.space"
+git config --global push.default simple
+```
+
+```
 cat ~/.ssh/id_rsa.pub
 ```
 
