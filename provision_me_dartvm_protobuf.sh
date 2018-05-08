@@ -28,3 +28,5 @@ pub global activate protoc_plugin --verbose
 # nano .profile
 # add bin/protoc-gen-dart to path
 # restart
+
+pub global activate stagehand
