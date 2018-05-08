@@ -17,7 +17,7 @@ sudo apt-get install dart
 echo 'PATH="$PATH:/usr/lib/dart/bin:$HOME/.pub-cache/bin"' >> ~/.profile
 
 PATH="$PATH:/usr/lib/dart/bin:$HOME/.pub-cache/bin"
-pub global activate protoc_plugin --verbose
+pub global activate protoc_plugin
 
 # git clone https://github.com/dart-lang/pub.git
 
