@@ -4,8 +4,8 @@ set -x
 rm /var/lib/apt/lists/*
 rm /var/lib/apt/lists/partial/*
 
-aptitude update
-aptitude dist-upgrade -y
+apt-get update
+apt-get dist-upgrade -y
 
 timedatectl set-timezone UTC
 
