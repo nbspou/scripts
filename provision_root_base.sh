@@ -5,7 +5,9 @@ rm /var/lib/apt/lists/*
 rm /var/lib/apt/lists/partial/*
 
 apt-get update
-apt-get dist-upgrade -y
+apt-get upgrade -y
+apt-get install aptitude -y
+aptitude dist-upgrade -y
 
 timedatectl set-timezone UTC
 
