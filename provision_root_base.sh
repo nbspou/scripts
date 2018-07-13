@@ -7,6 +7,7 @@ rm /var/lib/apt/lists/partial/*
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y
+apt-get autoremove -y
 
 timedatectl set-timezone UTC
 
