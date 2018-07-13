@@ -9,6 +9,8 @@ DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y
 apt-get autoremove -y
 
+apt-get install aptitude -y
+
 timedatectl set-timezone UTC
 
 # See: https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04
