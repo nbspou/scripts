@@ -96,13 +96,18 @@ EXIT
 sudo aptitude install nginx
 sudo systemctl status nginx
 ```
-Let's Encrypt!
+Generate a self signed certificate for development
+```
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+```
+Let's Encrypt! Generate a certificate for a domain
 ```
 sudo add-apt-repository ppa:certbot/certbot
 sudo aptitude update
 sudo aptitude install letsencrypt
 ```
 Set default configuration to handle Let's Encrypt and redirect to HTTPS
+Use self signed certificate for non-domain
 ```
 sudo mkdir -p /var/www/letsencrypt
 sudo nano /etc/nginx/sites-available/default
