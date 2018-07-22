@@ -67,3 +67,24 @@ Fix broken npm
 apt install aptitude
 aptitude reinstall nodejs
 ```
+
+## Ubuntu 18.04 LTS
+
+### MariaDB
+
+```
+sudo aptitude install mariadb-server mariadb-client
+sudo systemctl status mysql
+sudo mysql_secure_installation
+```
+Y to all questions.
+
+To create user with full privileges.
+```
+sudo mysql -u root -p
+```
+```
+CREATE USER 'me'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'me'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
