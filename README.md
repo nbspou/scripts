@@ -112,6 +112,23 @@ server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 
+	server_name _;
+
+	location ~ /\.well-known/acme-challenge/ {
+		allow all;
+		root /var/www/letsencrypt;
+		try_files $uri =404;
+	}
+
+	location / {
+		return 301 https://$host$request_uri;
+	}
+}
+
+server {
+	# listen 80 default_server;
+	# listen [::]:80 default_server;
+
 	# listen 443 ssl default_server;
 	# listen [::]:443 ssl default_server;
 
@@ -121,12 +138,6 @@ server {
 	index index.html index.htm index.nginx-debian.html;
 
 	server_name _;
-
-	location ~ /\.well-known/acme-challenge/ {
-		allow all;
-		root /var/www/letsencrypt;
-		try_files $uri =404;
-	}
 
 	location / {
 		# First attempt to serve request as file, then
@@ -169,4 +180,8 @@ server {
 #	}
 #}
 
+```
+```
+sudo nginx -t
+sudo service nginx reload
 ```
