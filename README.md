@@ -134,8 +134,12 @@ server {
 	# listen 80 default_server;
 	# listen [::]:80 default_server;
 
-	# listen 443 ssl default_server;
-	# listen [::]:443 ssl default_server;
+	listen 443 ssl default_server;
+	listen [::]:443 ssl default_server;
+	
+	ssl on;
+	ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+	ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
 
 	root /var/www/html;
 
