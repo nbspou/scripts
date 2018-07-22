@@ -218,3 +218,24 @@ sudo nano /etc/cron.daily/letsencrypt
 #!/bin/bash
 /usr/bin/letsencrypt renew --renew-hook "/etc/init.d/nginx reload"
 ```
+
+### PHP
+
+```
+sudo apt install php-fpm php-common php-mysql php-gd php-cli
+sudo systemctl status php7.2-fpm
+sudo nano /etc/nginx/sites-available/default
+```
+```
+	index index.html index.htm index.nginx-debian.html index.php;
+```
+```
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+	}
+```
+```
+sudo nginx -t
+sudo service nginx reload
+```
