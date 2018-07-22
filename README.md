@@ -222,7 +222,7 @@ sudo nano /etc/cron.daily/letsencrypt
 ### PHP
 
 ```
-sudo apt install php-fpm php-common php-mysql php-gd php-cli
+sudo aptitude install php-fpm php-common php-mysql php-gd php-cli
 sudo systemctl status php7.2-fpm
 sudo nano /etc/nginx/sites-available/default
 ```
@@ -242,4 +242,14 @@ sudo service nginx reload
 ```
 ```
 echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+```
+
+###
+```
+sudo aptitude install phpmyadmin
+```
+No automatic install, just put password.
+May replace `html` in path with `localhost` or with the public domain, whichever is needed.
+```
+sudo ln -s  /usr/share/phpmyadmin /var/www/html/phpmyadmin
 ```
