@@ -226,6 +226,7 @@ sudo apt install php-fpm php-common php-mysql php-gd php-cli
 sudo systemctl status php7.2-fpm
 sudo nano /etc/nginx/sites-available/default
 ```
+Settings individual to each virtual host
 ```
 	index index.html index.htm index.nginx-debian.html index.php;
 ```
