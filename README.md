@@ -210,3 +210,11 @@ server {
 sudo nginx -t
 sudo service nginx reload
 ```
+Set up automatic certificate renewal
+```
+sudo nano /etc/cron.daily/letsencrypt
+```
+```
+#!/bin/bash
+/usr/bin/letsencrypt renew --renew-hook "/etc/init.d/nginx reload"
+```
