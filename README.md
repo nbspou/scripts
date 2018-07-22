@@ -79,7 +79,7 @@ sudo mysql_secure_installation
 ```
 Y to all questions.
 
-To create user with full privileges.
+To create a development user with full privileges.
 ```
 sudo mysql -u root -p
 ```
@@ -87,4 +87,18 @@ sudo mysql -u root -p
 CREATE USER 'me'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'me'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
+EXIT
+```
+
+### Nginx
+
+```
+sudo aptitude install nginx
+sudo systemctl status nginx
+```
+Let's Encrypt!
+```
+sudo add-apt-repository ppa:certbot/certbot
+sudo aptitude update
+sudo aptitude install letsencrypt
 ```
