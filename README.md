@@ -104,6 +104,7 @@ sudo aptitude install letsencrypt
 ```
 Set default configuration to handle Let's Encrypt and redirect to HTTPS
 ```
+sudo mkdir -p /var/www/letsencrypt
 sudo nano /etc/nginx/sites-available/default
 ```
 ```
@@ -120,6 +121,12 @@ server {
 	index index.html index.htm index.nginx-debian.html;
 
 	server_name _;
+
+	location ~ /\.well-known/acme-challenge/ {
+		allow all;
+		root /var/www/letsencrypt;
+		try_files $uri =404;
+	}
 
 	location / {
 		# First attempt to serve request as file, then
