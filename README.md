@@ -160,31 +160,39 @@ server {
 	#	deny all;
 	#}
 }
-
-# Virtual Host configuration for example.com
-#
-# You can move that to a different file under sites-available/ and symlink that
-# to sites-enabled/ to enable it.
-#
-#server {
-#	listen 443 ssl;
-#	listen [::]:443 ssl;
-#
-#	server_name example.com;
-#
-#	root /var/www/example.com;
-#	index index.html;
-#
-#	location / {
-#		try_files $uri $uri/ =404;
-#	}
-#}
-
 ```
 ```
 sudo nginx -t
 sudo service nginx reload
 ```
 ```
-sudo letsencrypt certonly -a webroot --webroot-path=/var/www/letsencrypt -m mail@example.com --agree-tos -d www.example.com,example.com
+sudo letsencrypt certonly -a webroot --webroot-path=/var/www/letsencrypt -m mail@example.com --agree-tos -d example.com
+```
+```
+sudo mkdir -p /var/www/example.com
+sudo nano /etc/nginx/sites-available/default
+```
+```
+server {
+	listen 443 ssl;
+	listen [::]:443 ssl;
+
+	root /var/www/example.com;
+	
+	ssl on;
+	ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+
+	index index.html;
+	
+	server_name example.com;
+	
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+```
+```
+sudo nginx -t
+sudo service nginx reload
 ```
