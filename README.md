@@ -70,6 +70,11 @@ aptitude reinstall nodejs
 
 ## Ubuntu 18.04 LTS
 
+References
+* https://www.tecmint.com/install-nginx-mariadb-php-in-ubuntu-18-04/
+* https://itsyndicate.org/blog/install-letsencrypt-on-ubuntu-16-04-and-ubuntu-18-04/
+* https://bjornjohansen.no/redirect-to-https-with-nginx
+
 ### MariaDB
 
 ```
