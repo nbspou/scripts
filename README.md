@@ -239,3 +239,6 @@ sudo nano /etc/nginx/sites-available/default
 sudo nginx -t
 sudo service nginx reload
 ```
+```
+echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+```
