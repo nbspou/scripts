@@ -244,7 +244,8 @@ sudo service nginx reload
 echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
 ```
 
-###
+### phpMyAdmin
+
 ```
 sudo aptitude install phpmyadmin
 ```
