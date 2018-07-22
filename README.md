@@ -102,3 +102,64 @@ sudo add-apt-repository ppa:certbot/certbot
 sudo aptitude update
 sudo aptitude install letsencrypt
 ```
+Set default configuration to handle Let's Encrypt and redirect to HTTPS
+```
+sudo nano /etc/nginx/sites-available/default
+```
+```
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	# listen 443 ssl default_server;
+	# listen [::]:443 ssl default_server;
+
+	root /var/www/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+
+	# pass PHP scripts to FastCGI server
+	#location ~ \.php$ {
+	#	include snippets/fastcgi-php.conf;
+	#
+	#	# With php-fpm (or other unix sockets):
+	#	fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+	#}
+
+	# deny access to .htaccess files, if Apache's document root
+	# concurs with nginx's one
+	#
+	#location ~ /\.ht {
+	#	deny all;
+	#}
+}
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#	listen 443 ssl;
+#	listen [::]:443 ssl;
+#
+#	server_name example.com;
+#
+#	root /var/www/example.com;
+#	index index.html;
+#
+#	location / {
+#		try_files $uri $uri/ =404;
+#	}
+#}
+
+```
