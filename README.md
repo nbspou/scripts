@@ -249,7 +249,8 @@ echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
 ```
 sudo aptitude install phpmyadmin
 ```
-No automatic install (tab, enter), just put password.
+No automatic install (tab, enter), automated password, don't put your root password here since it will be stored plaintext.
+
 May replace `html` in path with `localhost` or with the public domain, whichever is needed.
 ```
 sudo ln -s  /usr/share/phpmyadmin /var/www/html/phpmyadmin
