@@ -185,3 +185,6 @@ server {
 sudo nginx -t
 sudo service nginx reload
 ```
+```
+sudo letsencrypt certonly -a webroot --webroot-path=/var/www/letsencrypt -m mail@example.com --agree-tos -d www.example.com,example.com
+```
