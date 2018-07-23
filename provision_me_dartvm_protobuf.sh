@@ -30,3 +30,4 @@ pub global activate protoc_plugin
 # restart
 
 pub global activate stagehand
+pub global activate webdev
