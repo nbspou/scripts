@@ -76,7 +76,11 @@ References
 * https://bjornjohansen.no/redirect-to-https-with-nginx
 
 ### MariaDB
-
+```
+sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://sgp1.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu bionic main'
+```
 ```
 sudo aptitude install mariadb-server mariadb-client
 sudo systemctl status mysql
