@@ -67,3 +67,8 @@ Fix broken npm
 apt install aptitude
 aptitude reinstall nodejs
 ```
+
+To get missing git submodules
+```
+git submodule update --init
+```
