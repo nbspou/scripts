@@ -7,5 +7,5 @@ set -x
 
 # See: http://pm2.keymetrics.io/docs/usage/startup/
 
-npm install -g pm2
+sudo npm install -g pm2
 pm2 startup
