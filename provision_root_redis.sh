@@ -18,6 +18,7 @@ wget https://raw.githubusercontent.com/nbspou/scripts/master/data/disable-transp
 mv disable-transparent-hugepage /etc/init.d/disable-transparent-hugepages
 chmod 755 /etc/init.d/disable-transparent-hugepages
 /etc/init.d/disable-transparent-hugepages start
+update-rc.d disable-transparent-hugepages defaults
 
 # See: https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server
 
