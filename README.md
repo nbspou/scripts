@@ -40,7 +40,7 @@ Ensure that `/etc/ssh/sshd_config` has `PasswordAuthentication no`!
 
 ```
 git config --global user.name "Jan Boon"
-git config --global user.email "kaetemi@no-break.space"
+git config --global user.email "jan.boon@kaetemi.be"
 git config --global push.default simple
 ```
 
