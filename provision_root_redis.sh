@@ -29,8 +29,8 @@ systemctl start redis-server
 apt-get install golang-go -y
 git clone -q https://github.com/oliver006/redis_exporter.git redis_exporter
 cd redis_exporter
-GOPATH=/root/redis_exporter go get
-GOPATH=/root/redis_exporter go build
+GO111MODULE=off GOPATH=/root/redis_exporter go get
+GO111MODULE=off GOPATH=/root/redis_exporter go build
 cd ..
 cp /root/redis_exporter/redis_exporter /usr/bin/prometheus-redis-exporter
 wget https://raw.githubusercontent.com/nbspou/scripts/master/data/redis_exporter.service
