@@ -35,6 +35,10 @@ apt autoclean
 apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
 
+apt purge snapd
+apt autoremove
+rm -rf ~/snap
+
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | bash
 
 # See: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
