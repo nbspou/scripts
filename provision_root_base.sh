@@ -31,6 +31,7 @@ sysctl vm.vfs_cache_pressure=50
 echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
 
 curl -sSL https://deb.nodesource.com/setup_12.x | bash
+apt autoclean
 apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
 
