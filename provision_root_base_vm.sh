@@ -25,7 +25,7 @@ apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
 
 apt purge snapd -y
-apt autoremove
+apt autoremove -y
 rm -rf ~/snap
 
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | bash
