@@ -35,7 +35,7 @@ apt autoclean
 apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
 
-apt purge snapd
+apt purge snapd -y
 apt autoremove
 rm -rf ~/snap
 
