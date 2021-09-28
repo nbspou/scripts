@@ -15,7 +15,15 @@ timedatectl set-timezone UTC
 
 # DNS Lookup
 
-sed -i 's/nameservers:/nameservers:\n        search:\n          - ryzom.dev/' /etc/netplan/01-netcfg.yaml
+# sed -i 's/nameservers:/nameservers:\n        search:\n          - ryzom.dev/' /etc/netplan/01-netcfg.yaml
+nano 99-ryzom-core.yaml
+network:
+  version: 2
+  ethernets:
+    eth0:
+      nameservers:
+        search:
+          - ryzom.dev
 netplan apply
 
 # SSH Password
