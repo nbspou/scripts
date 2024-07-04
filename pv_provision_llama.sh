@@ -12,7 +12,7 @@ if [ ! -f "$SETUP_FLAG" ]; then
     apt-get update
 
     # Install necessary packages
-    apt-get install aptitude libcurl4-openssl-dev libomp-dev clang cmake ninja-build nano nvtop ncurses-term -y
+    apt-get install aptitude libcurl4-openssl-dev libomp-dev clang cmake ninja-build nano nvtop ncurses-term lshw -y
 
     # Create flag file to indicate setup is done
     touch "$SETUP_FLAG"
@@ -75,6 +75,8 @@ fi
 if ! command -v ollama &> /dev/null; then
     curl -fsSL https://ollama.com/install.sh | sh
 fi
+
+touch ~/.no_auto_tmux
 
 # Install pm2 globally
 npm install -g pm2
