@@ -66,13 +66,15 @@ else
 fi
 
 # Install Node.js 22.x only if not installed or version is different
-if ! command -v node &> /dev/null || [[ $(node -v) != v22* ]]; then
+if ! { command -v node &> /dev/null || [ -x /usr/bin/node ]; } || \
+   { [ -x /usr/bin/node ] && [[ $(/usr/bin/node -v) != v22* ]]; } || \
+   { command -v node &> /dev/null && [[ $(node -v) != v22* ]]; }; then
     curl -sSL https://deb.nodesource.com/setup_22.x | bash
     apt install nodejs -y
 fi
 
 # Install Ollama only if not already installed
-if ! command -v ollama &> /dev/null; then
+if ! { command -v ollama &> /dev/null || [ -x /usr/local/bin/ollama ]; }; then
     curl -fsSL https://ollama.com/install.sh | sh
 fi
 
