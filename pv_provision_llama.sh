@@ -83,3 +83,4 @@ npm install -g pm2
 
 # List pm2 processes
 pm2 list
+pm2 resurrect
