@@ -24,7 +24,7 @@ Or on GEX44
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_base_gex44.sh | bash
 ```
 
-and follow instructions at https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_network and also run `sudo apt install nvidia-cuda-toolkit` or PATH won't be set.
+and follow instructions at https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_network and also run `sudo apt install nvidia-cuda-toolkit` or PATH won't be set. Also add `export TERM=putty` at front of .bashrc (between "for examples" and "# If").
 
 Then to add the first user (replace `me`)
 
