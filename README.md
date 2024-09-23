@@ -18,6 +18,14 @@ curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root
 * Prometheus Redis Exporter: http://localhost:9121/metrics
 * Prometheus MongoDB Exporter: http://localhost:9001/metrics
 
+Or on GEX44
+
+```
+curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_base_gex44.sh | bash
+```
+
+Then to add the first user (replace `me`)
+
 ```
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_root_adduser.sh | bash -s me
 ```
