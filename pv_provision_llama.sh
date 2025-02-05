@@ -12,7 +12,7 @@ if [ ! -f "$SETUP_FLAG" ]; then
     apt-get update
 
     # Install necessary packages
-    apt-get install aptitude libcurl4-openssl-dev libomp-dev clang cmake ninja-build nano nvtop htop ncurses-term lshw screen aria2 unzip -y
+    apt-get install aptitude libcurl4-openssl-dev libomp-dev clang cmake ninja-build nano nvtop htop ncurses-term lshw screen aria2 unzip libstdc++-12-dev -y
 
     # Create flag file to indicate setup is done
     touch "$SETUP_FLAG"
