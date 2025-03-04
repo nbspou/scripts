@@ -9,8 +9,23 @@ if [ ! -f "$SETUP_FLAG" ]; then
     # Update package lists
     rm /var/lib/apt/lists/*
     rm /var/lib/apt/lists/partial/*
-    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
-    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+
+    # Check for Caddy GPG key
+    if [ ! -f /usr/share/keyrings/caddy-stable-archive-keyring.gpg ]; then
+        echo "Adding Caddy GPG key..."
+        curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+    else
+        echo "Caddy GPG key already configured, skipping..."
+    fi
+
+    # Check for Caddy repository list
+    if [ ! -f /etc/apt/sources.list.d/caddy-stable.list ]; then
+        echo "Adding Caddy repository..."
+        curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+    else
+        echo "Caddy repository already configured, skipping..."
+    fi
+
     apt-get update
 
     # Install necessary packages
