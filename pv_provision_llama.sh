@@ -89,4 +89,4 @@ pm2 list
 pm2 resurrect
 
 # Start caddy
-caddy start
+caddy start --config /etc/caddy/Caddyfile
