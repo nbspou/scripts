@@ -100,6 +100,7 @@ touch ~/.no_auto_tmux
 
 # Install pm2 globally
 npm install -g pm2
+pm2 install pm2-logrotate
 
 # List pm2 processes
 pm2 list
