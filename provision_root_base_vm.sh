@@ -24,7 +24,7 @@ apt autoclean
 apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
 
-apt-get remove vim -y
+apt-get remove vim vim-tiny -y
 apt purge snapd -y
 apt autoremove -y
 rm -rf ~/snap
