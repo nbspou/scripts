@@ -27,7 +27,7 @@ apt-get install nano screen command-not-found psmisc -y
 
 # Remove common packages
 
-apt-get remove vim -y
+apt-get remove vim vim-tiny -y
 apt purge snapd -y
 apt autoremove -y
 rm -rf ~/snap
