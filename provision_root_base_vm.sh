@@ -28,4 +28,8 @@ apt purge snapd -y
 apt autoremove -y
 rm -rf ~/snap
 
+# Disable SSH password authentication
+sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+systemctl restart ssh
+
 curl -sSL https://raw.githubusercontent.com/nbspou/scripts/master/provision_me_base.sh | bash
