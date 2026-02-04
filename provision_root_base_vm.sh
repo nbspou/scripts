@@ -24,9 +24,11 @@ apt autoclean
 apt-get install nodejs build-essential git mercurial cmake -y
 apt-get install prometheus-node-exporter -y
 
+apt-get remove vim -y
 apt purge snapd -y
 apt autoremove -y
 rm -rf ~/snap
+apt autoclean
 
 # Disable SSH password authentication
 sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
