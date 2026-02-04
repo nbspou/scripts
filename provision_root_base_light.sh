@@ -29,6 +29,10 @@ apt-get install prometheus-node-exporter -y
 apt-get install nano screen command-not-found psmisc -y
 apt-get remove vim -y
 
+# Disable SSH password authentication
+sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+systemctl restart ssh
+
 # Get rid of any bashrc customizations
 
 /bin/cp /etc/skel/.bashrc ~/
