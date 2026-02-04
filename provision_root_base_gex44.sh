@@ -33,6 +33,10 @@ apt autoremove -y
 rm -rf ~/snap
 apt autoclean
 
+# Disable SSH password authentication
+sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+systemctl restart ssh
+
 # Get rid of any bashrc customizations
 
 /bin/cp /etc/skel/.bashrc ~/
