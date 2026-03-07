@@ -22,9 +22,8 @@ sysctl vm.vfs_cache_pressure=50
 echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
 
 # Install common packages
-curl -sSL https://deb.nodesource.com/setup_24.x | bash
 apt autoclean
-apt-get install nodejs build-essential git mercurial cmake -y
+apt-get install build-essential git mercurial cmake -y
 apt-get install nano screen command-not-found psmisc -y
 
 # Remove common packages
