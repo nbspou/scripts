@@ -82,11 +82,11 @@ else
     echo "Timezone is already set to UTC. Skipping timezone change."
 fi
 
-# Install Node.js 22.x only if not installed or version is different
+# Install Node.js 24.x only if not installed or version is different
 if ! { command -v node &> /dev/null || [ -x /usr/bin/node ]; } || \
-   { [ -x /usr/bin/node ] && [[ $(/usr/bin/node -v) != v22* ]]; } || \
-   { command -v node &> /dev/null && [[ $(node -v) != v22* ]]; }; then
-    curl -sSL https://deb.nodesource.com/setup_22.x | bash
+   { [ -x /usr/bin/node ] && [[ $(/usr/bin/node -v) != v24* ]]; } || \
+   { command -v node &> /dev/null && [[ $(node -v) != v24* ]]; }; then
+    curl -sSL https://deb.nodesource.com/setup_24.x | bash
     apt install nodejs -y
 fi
 
