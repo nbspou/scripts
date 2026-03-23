@@ -108,3 +108,5 @@ pm2 resurrect
 
 # Start caddy
 caddy start --config /etc/caddy/Caddyfile
+
+touch /root/.provision_script_done
