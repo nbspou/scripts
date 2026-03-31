@@ -91,6 +91,11 @@ if ! { command -v node &> /dev/null || [ -x /usr/bin/node ]; } || \
     apt install nodejs -y
 fi
 
+# Set npm minimum release age to 14 days for supply chain security
+if ! grep -q "min-release-age" ~/.npmrc 2>/dev/null; then
+    echo "min-release-age=14" >> ~/.npmrc
+fi
+
 # Install Ollama only if not already installed
 if ! { command -v ollama &> /dev/null || [ -x /usr/local/bin/ollama ]; }; then
     curl -fsSL https://ollama.com/install.sh | sh
