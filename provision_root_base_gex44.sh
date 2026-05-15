@@ -26,6 +26,7 @@ apt autoclean
 apt-get install sudo -y
 apt-get install build-essential git mercurial cmake -y
 apt-get install nano screen command-not-found psmisc -y
+apt-get install prometheus-node-exporter -y
 
 # Remove common packages
 
