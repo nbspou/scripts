@@ -23,6 +23,7 @@ echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
 
 # Install common packages
 apt autoclean
+apt-get install sudo -y
 apt-get install build-essential git mercurial cmake -y
 apt-get install nano screen command-not-found psmisc -y
 
