@@ -66,7 +66,7 @@ clone_git_repo() {
 }
 
 # Clone the Git repositories if they don't exist
-clone_git_repo "https://github.com/ggerganov/llama.cpp.git" "$HOME/llama.cpp"
+# clone_git_repo "https://github.com/ggerganov/llama.cpp.git" "$HOME/llama.cpp"
 
 # Check and set timezone only if necessary
 current_time=$(date +%Z)
