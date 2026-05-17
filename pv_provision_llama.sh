@@ -97,10 +97,10 @@ if ! grep -q "min-release-age" ~/.npmrc 2>/dev/null; then
 fi
 
 # Install Ollama only if not already installed
-if ! { command -v ollama &> /dev/null || [ -x /usr/local/bin/ollama ]; }; then
-    curl -fsSL https://ollama.com/install.sh | sh
-    sudo systemctl disable --now ollama.service
-fi
+# if ! { command -v ollama &> /dev/null || [ -x /usr/local/bin/ollama ]; }; then
+#     curl -fsSL https://ollama.com/install.sh | sh
+#     sudo systemctl disable --now ollama.service
+# fi
 
 touch ~/.no_auto_tmux
 
